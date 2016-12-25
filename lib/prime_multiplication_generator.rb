@@ -6,6 +6,7 @@ require 'prime_multiplication_generator/version'
 require 'prime_multiplication_generator/parse_input'
 require 'prime_multiplication_generator/prime'
 require 'prime_multiplication_generator/prime_multiplication_table'
+require 'prime_multiplication_generator/color_selections'
 
 module PrimeMultiplicationGenerator
 

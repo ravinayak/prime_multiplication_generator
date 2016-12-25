@@ -1,17 +1,13 @@
+require 'prime_multiplication_generator/color_selections'
 # Used for namespacing
 #
 module PrimeMultiplicationGenerator
   # Class used for generating primes
   #
   class PrimeMultiplicationTable
-
-    # Constants for colors
+    # Includes a module for color selections
     #
-    BOUNDARY_PRIME_COLOR =  { color: :green }
-    ODD_COLOR = { color: :magenta }
-    EVEN_COLOR = { color: :blue }
-    DASH_COLOR = { color: :red}
-
+    include ColorSelections
 
     attr_accessor :num_of_primes, :prime_num_hash, :max_prime_digit, :max_product_digit, :no_of_chars,
                   :prime_num_range
