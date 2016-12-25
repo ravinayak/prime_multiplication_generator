@@ -21,7 +21,7 @@ module PrimeMultiplicationGenerator
     # @param n [Integer]
     # @return [Integer]
     #
-    def self.calculate_nth_prime(n)
+    def self.prep_nth_prime(n)
       # Raise an exception if input number is less than 1
       #
       raise PrimeMultiplicationGenerator::PrimeException.new(n) if n < 1
@@ -40,7 +40,7 @@ module PrimeMultiplicationGenerator
 
       # Calls support method to perform the actual operation
       #
-      calculate_nth_prime_support(n, prime_number_counter, start_number)
+      prep_nth_prime_support(n, prime_number_counter, start_number)
     end
 
     # Returns the cached value for prime numbers
@@ -66,7 +66,7 @@ module PrimeMultiplicationGenerator
     # @param start_number [Integer]
     # @return [Integer]
     #
-    def self.calculate_nth_prime_support(n, prime_count, start_number)
+    def self.prep_nth_prime_support(n, prime_count, start_number)
       # Sets variables for input parameters
       #
       current_num, prime_count_input = start_number, prime_count
@@ -90,7 +90,7 @@ module PrimeMultiplicationGenerator
     # Evaluates the starting number for counting prime numbers
     #  @return [Integer]
     #
-    def self.evaluate_start_number
+    def self.prep_start_number
       prime_number_counter = self.cached_prime_count
       prime_number_counter == 0 ? 2 : self.cached_prime_numbers[prime_number_counter] + 1
     end
