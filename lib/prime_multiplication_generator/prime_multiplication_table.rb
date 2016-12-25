@@ -49,6 +49,15 @@ module PrimeMultiplicationGenerator
       str = "\t"
       str += prep_prime_num_str(row_prime_num)
       str += prep_dash_str("\t|\t")
+      prep_row_str_support(str, row_prime_num)
+    end
+
+    # Prepares string for each row of product
+    # @param str [String]
+    # @param row_prime_num [Integer]
+    # @return [String]
+    #
+    def prep_row_str_support(str, row_prime_num)
       self.prime_num_range.each do |i|
         color_hash = prep_color(i)
         str += prep_product_num_str(row_prime_num * self.prime_num_hash[i], color_hash)
@@ -63,15 +72,27 @@ module PrimeMultiplicationGenerator
     def prep_headers_tab_count
       str, tab_count = "\n\n\t\t", 2
       str += prep_dash_str('|')
+      str, tab_count = prep_headers_tab_count_support(str, tab_count)
+      puts str
+      tab_count
+    end
+
+    # Prepares string for headers and tab count
+    # @param str [String]
+    # @param tab_count [Integer]
+    # @return [Array]
+    #
+    def prep_headers_tab_count_support(str, tab_count)
       self.prime_num_range.each do |num|
         str += "\t"
         tab_count += 1
         str += prep_product_num_str(self.prime_num_hash[num], BOUNDARY_PRIME_COLOR)
       end
-      puts str
-      tab_count
+      [
+          str,
+          tab_count
+      ]
     end
-
     # Displays dash string
     # @param input_str [String]
     # @return [String]
