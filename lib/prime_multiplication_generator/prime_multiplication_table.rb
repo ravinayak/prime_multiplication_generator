@@ -88,6 +88,7 @@ module PrimeMultiplicationGenerator
         tab_count += 1
         str += prep_product_num_str(self.prime_num_hash[num], BOUNDARY_PRIME_COLOR)
       end
+
       [
           str,
           tab_count
