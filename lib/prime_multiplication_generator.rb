@@ -19,5 +19,6 @@ module PrimeMultiplicationGenerator
     Prime.prep_nth_prime(no_of_primes)
     prime_mult_table = PrimeMultiplicationTable.new(no_of_primes, Prime.cached_prime_numbers)
     prime_mult_table.display_table
+    nil
   end
 end
