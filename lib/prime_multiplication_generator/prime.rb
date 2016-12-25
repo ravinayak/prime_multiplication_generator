@@ -36,7 +36,7 @@ module PrimeMultiplicationGenerator
 
       # Starts counting prime ahead of the last prime that was evaluated
       #
-      start_number = self.evaluate_start_number
+      start_number = self.prep_start_number
 
       # Calls support method to perform the actual operation
       #

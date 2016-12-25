@@ -5,6 +5,14 @@ module PrimeMultiplicationGenerator
   #
   class PrimeMultiplicationTable
 
+    # Constants for colors
+    #
+    BOUNDARY_PRIME_COLOR =  { color: :green }
+    ODD_COLOR = { color: :magenta }
+    EVEN_COLOR = { color: :blue }
+    DASH_COLOR = { color: :red}
+
+
     attr_accessor :num_of_primes, :prime_num_hash, :max_prime_digit, :max_product_digit, :no_of_chars,
                   :prime_num_range
 
@@ -42,10 +50,13 @@ module PrimeMultiplicationGenerator
     def prep_row_str(k)
       row_prime_num = self.prime_num_hash[k]
       str = "\t"
-      str += display_prime_num(row_prime_num)
-      str += "\t|\t"
+      val = display_prime_num(row_prime_num).colorize(BOUNDARY_PRIME_COLOR)
+      str += val
+      str += "\t|\t".colorize(DASH_COLOR)
       self.prime_num_range.each do |i|
-        str += display_product_num(row_prime_num * self.prime_num_hash[i])
+        color_hash = prep_color(i)
+        val = display_product_num(row_prime_num * self.prime_num_hash[i]).colorize(color_hash)
+        str += val
         str += "\t"
       end
       str
@@ -55,12 +66,14 @@ module PrimeMultiplicationGenerator
     # @return [NIL]
     #
     def prep_headers_tab_count
-      str, tab_count = "\t\t", 2
-      str += '|'
+
+      str, tab_count = "\n\n\t\t", 2
+      str += '|'.colorize(DASH_COLOR)
       self.prime_num_range.each do |num|
         str += "\t"
         tab_count += 1
-        str += display_product_num(self.prime_num_hash[num])
+        val = display_product_num(self.prime_num_hash[num]).colorize(BOUNDARY_PRIME_COLOR)
+        str += val
       end
       puts str
       tab_count
@@ -74,7 +87,7 @@ module PrimeMultiplicationGenerator
       str = ''
       self.no_of_chars = (tab_count + 1 ) * 8
       (1..self.no_of_chars).each { str += '-' }
-      puts "#{str}"
+      puts "#{str.colorize(DASH_COLOR)}"
     end
 
     # Generates the maximum prime digit
@@ -105,6 +118,24 @@ module PrimeMultiplicationGenerator
     #
     def display_product_num(product)
       "#{product.to_s.rjust(self.max_product_digit)}"
+    end
+
+    # Determines color based on input
+    # @param n [Integer]
+    # @return [Hash]
+    #
+    def prep_color(n)
+      return EVEN_COLOR if is_even?(n)
+      ODD_COLOR
+    end
+
+    # Determines if input is even or odd
+    # @param n [Integer]
+    # @return [TrueClass/FalseClass]
+    #
+    def is_even?(n)
+      return true if n % 2 == 0
+      false
     end
   end
 end

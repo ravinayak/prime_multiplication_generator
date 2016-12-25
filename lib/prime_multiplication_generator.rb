@@ -1,6 +1,7 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'prime_multiplication_generator'))
 
+require 'colorize'
 require 'prime_multiplication_generator/version'
 require 'prime_multiplication_generator/parse_input'
 require 'prime_multiplication_generator/prime'
