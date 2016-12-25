@@ -36,6 +36,7 @@ module PrimeMultiplicationGenerator
     def prep_rows
       self.prime_num_range.each do |k|
         puts prep_row_str(k)
+        puts
       end
     end
 
@@ -46,13 +47,11 @@ module PrimeMultiplicationGenerator
     def prep_row_str(k)
       row_prime_num = self.prime_num_hash[k]
       str = "\t"
-      val = display_prime_num(row_prime_num).colorize(BOUNDARY_PRIME_COLOR)
-      str += val
-      str += "\t|\t".colorize(DASH_COLOR)
+      str += prep_prime_num_str(row_prime_num)
+      str += prep_dash_str("\t|\t")
       self.prime_num_range.each do |i|
         color_hash = prep_color(i)
-        val = display_product_num(row_prime_num * self.prime_num_hash[i]).colorize(color_hash)
-        str += val
+        str += prep_product_num_str(row_prime_num * self.prime_num_hash[i], color_hash)
         str += "\t"
       end
       str
@@ -63,15 +62,39 @@ module PrimeMultiplicationGenerator
     #
     def prep_headers_tab_count
       str, tab_count = "\n\n\t\t", 2
-      str += '|'.colorize(DASH_COLOR)
+      str += prep_dash_str('|')
       self.prime_num_range.each do |num|
         str += "\t"
         tab_count += 1
-        val = display_product_num(self.prime_num_hash[num]).colorize(BOUNDARY_PRIME_COLOR)
-        str += val
+        str += prep_product_num_str(self.prime_num_hash[num], BOUNDARY_PRIME_COLOR)
       end
       puts str
       tab_count
+    end
+
+    # Displays dash string
+    # @param input_str [String]
+    # @return [String]
+    #
+    def prep_dash_str(input_str)
+      input_str.colorize(DASH_COLOR)
+    end
+
+    # Returns string for prime number display
+    # @param row_prime_num [Integer]
+    # @return [String]
+    #
+    def prep_prime_num_str(row_prime_num)
+      display_prime_num(row_prime_num).colorize(BOUNDARY_PRIME_COLOR)
+    end
+
+    # Returns string for product number display
+    # @param product_num [Integer]
+    # @param color_hash [Hash]
+    # @return [String]
+    #
+    def prep_product_num_str(product_num, color_hash)
+      display_product_num(product_num).colorize(color_hash)
     end
 
     # Prepares Border
@@ -82,7 +105,7 @@ module PrimeMultiplicationGenerator
       str = ''
       self.no_of_chars = (tab_count + 1 ) * 8
       (1..self.no_of_chars).each { str += '-' }
-      puts "#{str.colorize(DASH_COLOR)}"
+      puts "#{prep_dash_str(str)}"
     end
 
     # Generates the maximum prime digit
