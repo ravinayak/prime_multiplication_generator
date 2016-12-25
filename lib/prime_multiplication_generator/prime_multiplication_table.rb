@@ -66,7 +66,6 @@ module PrimeMultiplicationGenerator
     # @return [NIL]
     #
     def prep_headers_tab_count
-
       str, tab_count = "\n\n\t\t", 2
       str += '|'.colorize(DASH_COLOR)
       self.prime_num_range.each do |num|
