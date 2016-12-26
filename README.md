@@ -28,8 +28,8 @@ To use it in code:
 ## Performance
 
     Space complexity is O(N) => the program caches N prime numbers once they are calculated.
-    Time complexity is O(m * sqrt(m)) for completely calculating N prime numbers during the worst case scenario
-    (first time calculation, cache is empty) where m is the Nth prime number.
+    Time complexity is O(m * sqrt(m)) for completely calculating N prime numbers where m is the
+    Nth prime number.
 
 ## Benchmarking
 
