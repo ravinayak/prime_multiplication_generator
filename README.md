@@ -7,7 +7,7 @@ benchmarks performance of Prime Number determination, and calculation of Prime N
 
 ![alt text][sample_output]
 
-[sample_output]: https://github.com/ephraimpei/unite-us-coding-challenge/blob/master/images/sample_output.png?raw=true
+[sample_output]: https://github.com/ravinayak/prime_multiplication_generator/blob/master/images/SampleOutput.png
 
 ## Getting Started
 
@@ -40,6 +40,6 @@ Benchmarking
 
   Here were my results of the benchmark tests:
 
-  ![alt text][is_prime_benchmark_tests]
+  ![alt text][prime_benchmark_tests]
 
-  [is_prime_benchmark_tests]: https://github.com/ephraimpei/unite-us-coding-challenge/blob/master/images/is_prime_benchmark_tests.png?raw=true
+  https://github.com/ravinayak/prime_multiplication_generator/blob/master/images/BenchmarkPerformanceOutput.png
