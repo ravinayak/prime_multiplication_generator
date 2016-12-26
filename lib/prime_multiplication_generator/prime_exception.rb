@@ -7,14 +7,24 @@ module PrimeMultiplicationGenerator
 
     # Defines a constant for message
     #
-    EX_MSG = 'Prime Number cannot be computed for given input'
+    EX_MSG = 'Input is in incorrect format. It must be a positive integer greater than 1'
 
-    attr_reader :number
+    attr_reader :number, :msg
 
     def initialize(number, msg = nil)
       @number = number
-      msg += ":: #{number}" if msg.nil?
-      super(msg)
+      @msg = prep_msg(msg)
+      @msg += ":: #{number}"
+      super(@msg)
+    end
+
+    # Returns string message based on given input
+    # @param msg [String]
+    # @return [String]
+    #
+    def prep_msg(msg)
+      return msg unless msg.nil?
+      EX_MSG
     end
   end
 end

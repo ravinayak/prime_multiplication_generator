@@ -43,22 +43,12 @@ module PrimeMultiplicationGenerator
       prep_nth_prime_support(n, prime_number_counter, start_number)
     end
 
-    # Returns the cached value for prime numbers
-    # @param n [Integer]
-    # @return [Integer]
-    #
-    def self.prep_cached_prime(n)
-      self.cached_prime_numbers[n]
-    end
-
     # Reset cached prime numbers hash
     # @return [NIl]
     #
     def self.reset_cached_prime_numbers
       self.cached_prime_numbers = {}
     end
-
-    private
 
     # Support method for generating primes
     # @param n [Integer]
