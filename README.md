@@ -1,41 +1,45 @@
-# PrimeMultiplicationGenerator
+# Primes Multiplication Table
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/prime_multiplication_generator`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Summary
 
-TODO: Delete this and the text above, and describe your gem
+This gem displays a multiplication table of N prime numbers to the console and provide a colorized output. It also
+benchmarks performance of Prime Number determination, and calculation of Prime Numbers
 
-## Installation
+![alt text][sample_output]
 
-Add this line to your application's Gemfile:
+[sample_output]: https://github.com/ephraimpei/unite-us-coding-challenge/blob/master/images/sample_output.png?raw=true
 
-```ruby
-gem 'prime_multiplication_generator'
-```
+## Getting Started
 
-And then execute:
+To install gem, use the following line:
 
-    $ bundle
+    $ gem install 'prime_multiplication_generator'
 
-Or install it yourself as:
+To add it to your Gemfile:
 
-    $ gem install prime_multiplication_generator
+    $ gem 'prime_multiplication_generator', github: 'git@github.com:ravinayak/prime_multiplication_generator.git'
 
-## Usage
+To use it in code:
 
-TODO: Write usage instructions here
+    $ require 'prime_multiplication_generator'
+    $ prime_table   =   PrimeMultiplicationGenerator.generate_prime_table (defaults to a size of 10)
+                    =   PrimeMultiplicationGenerator.generate_prime_table(<<num>>)
 
-## Development
+Performance
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+    **  Space complexity is O(N)** because the program caches N prime numbers once they are calculated.
+    **  Time complexity is O(m * sqrt(m))** for completely calculating N prime numbers during the worst case scenario
+        (first time calculation, cache is empty) where m is the Nth prime number.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Benchmarking
 
-## Contributing
+    Benchmarking is provided as a support for this gem in code, it can be run as follows:
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/prime_multiplication_generator.
+    $ require 'prime_multiplication_generator'
+    $ prime_table   =   PrimeMultiplicationGenerator.benchmark_performance
 
+  Here were my results of the benchmark tests:
 
-## License
+  ![alt text][is_prime_benchmark_tests]
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
+  [is_prime_benchmark_tests]: https://github.com/ephraimpei/unite-us-coding-challenge/blob/master/images/is_prime_benchmark_tests.png?raw=true
