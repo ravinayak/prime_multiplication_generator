@@ -1,10 +1,4 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-
-benchmark = File.expand_path('../benchmark', __FILE__)
-$LOAD_PATH.unshift(benchmark) unless $LOAD_PATH.include?(benchmark)
-
 require 'prime_multiplication_generator/version'
 
 Gem::Specification.new do |spec|
