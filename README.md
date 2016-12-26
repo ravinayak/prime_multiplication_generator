@@ -38,8 +38,8 @@ To use it in code:
     $ require 'prime_multiplication_generator'
     $ prime_table   =   PrimeMultiplicationGenerator.benchmark_performance
 
-  Here were my results of the benchmark tests:
+Below is a snapshot of results of the benchmark tests:
 
-  ![alt text][prime_benchmark_tests]
+![alt text][prime_benchmark_tests]
 
-  https://github.com/ravinayak/prime_multiplication_generator/blob/master/images/BenchmarkPerformanceOutput.png
+[prime_benchmark_tests]: https://github.com/ravinayak/prime_multiplication_generator/blob/master/images/BenchmarkPerformanceOutput.png
