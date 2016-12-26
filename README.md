@@ -25,13 +25,13 @@ To use it in code:
     $ prime_table   =   PrimeMultiplicationGenerator.generate_prime_table (defaults to a size of 10)
                     =   PrimeMultiplicationGenerator.generate_prime_table(<<num>>)
 
-Performance
+## Performance
 
-    **  Space complexity is O(N)** because the program caches N prime numbers once they are calculated.
-    **  Time complexity is O(m * sqrt(m))** for completely calculating N prime numbers during the worst case scenario
-        (first time calculation, cache is empty) where m is the Nth prime number.
+    Space complexity is O(N)** because the program caches N prime numbers once they are calculated.
+    Time complexity is O(m * sqrt(m))** for completely calculating N prime numbers during the worst case scenario
+    (first time calculation, cache is empty) where m is the Nth prime number.
 
-Benchmarking
+## Benchmarking
 
     Benchmarking is provided as a support for this gem in code, it can be run as follows:
 
