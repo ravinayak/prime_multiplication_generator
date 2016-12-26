@@ -21,6 +21,7 @@ module PrimeMultiplicationGenerator
     end
 
     # Public Interface to draw the multiplication table of primes
+    # @return [NIL]
     #
     def display_table
       tab_count = prep_headers_tab_count
@@ -94,6 +95,7 @@ module PrimeMultiplicationGenerator
           tab_count
       ]
     end
+
     # Displays dash string
     # @param input_str [String]
     # @return [String]
@@ -131,6 +133,7 @@ module PrimeMultiplicationGenerator
     end
 
     # Generates the maximum prime digit
+    # @return [Integer]
     #
     def prep_max_prime_digit
       self.max_prime_digit = self.prime_num_hash[self.num_of_primes]
@@ -138,6 +141,7 @@ module PrimeMultiplicationGenerator
     end
 
     # Generates the maximum product digit
+    # @return [Integer]
     #
     def prep_max_product_digit
       self.max_product_digit = self.prime_num_hash[self.num_of_primes] * self.prime_num_hash[self.num_of_primes]
