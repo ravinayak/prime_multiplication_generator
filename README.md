@@ -13,7 +13,14 @@ benchmarks performance of Prime Number determination, and calculation of Prime N
 
 To install gem, use the following line:
 
-    $ gem install 'prime_multiplication_generator'
+    $ Clone the directory - git clone git@github.com:ravinayak/prime_multiplication_generator.git
+    $ cd into the directory => cd prime_multiplication_generator
+    $ gem install prime_multiplication_generator-0.1.0.gem
+    $ irb
+    $ require 'prime_multiplication_generator'
+    $ irb> PrimeMultiplicationGenerator.generate_prime_table
+    $ irb> PrimeMultiplicationGenerator.generate_prime_table(20)
+    $ irb> PrimeMultiplicationGenerator.benchmark_performance
 
 To add it to your Gemfile:
 
