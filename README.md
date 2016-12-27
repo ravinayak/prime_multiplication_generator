@@ -17,7 +17,7 @@ To install gem, use the following line:
     $ cd into the directory => cd prime_multiplication_generator
     $ gem install prime_multiplication_generator-0.1.0.gem
     $ irb
-    $ require 'prime_multiplication_generator'
+    $ irb> require 'prime_multiplication_generator'
     $ irb> PrimeMultiplicationGenerator.generate_prime_table
     $ irb> PrimeMultiplicationGenerator.generate_prime_table(20)
     $ irb> PrimeMultiplicationGenerator.benchmark_performance
