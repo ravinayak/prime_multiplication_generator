@@ -1,10 +1,17 @@
 # coding: utf-8
+
+# Rubygems does the loading of path for you. Adjusting load paths
+# is done mostly for dev purposes and is considered an
+# Anti Pattern. However, to build it from github, the load path has
+# to be managed, therefore bundler provides this by default
+#
+
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 benchmark = File.expand_path('../benchmark', __FILE__)
 $LOAD_PATH.unshift(benchmark) unless $LOAD_PATH.include?(benchmark)
-
+#
 require 'prime_multiplication_generator/version'
 
 Gem::Specification.new do |spec|
