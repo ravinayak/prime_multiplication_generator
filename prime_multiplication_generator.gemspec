@@ -9,8 +9,8 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-benchmark = File.expand_path('../benchmark', __FILE__)
-$LOAD_PATH.unshift(benchmark) unless $LOAD_PATH.include?(benchmark)
+benchmark_test = File.expand_path('../benchmark_test', __FILE__)
+$LOAD_PATH.unshift(benchmark_test) unless $LOAD_PATH.include?(benchmark_test)
 #
 require 'prime_multiplication_generator/version'
 

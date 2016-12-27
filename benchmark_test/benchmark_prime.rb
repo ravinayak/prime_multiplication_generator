@@ -2,7 +2,7 @@ require_relative '../lib/prime_multiplication_generator'
 require 'benchmark/ips'
 # Used for namespacing benchmark
 #
-module Benchmark
+module BenchmarkTest
 
   # Constant to hold Prime class
   #

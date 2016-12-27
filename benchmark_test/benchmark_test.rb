@@ -1,8 +1,8 @@
-require_relative '../benchmark/benchmark_prime'
+require_relative '../benchmark_test/benchmark_prime'
 
 # Used for namespacing
 #
-module Benchmark
+module BenchmarkTest
   # Benchmarks performance of prime number caching and check
   #
   def self.bm_primes

@@ -4,7 +4,7 @@ require 'prime_multiplication_generator/parse_input'
 require 'prime_multiplication_generator/prime'
 require 'prime_multiplication_generator/prime_multiplication_table'
 require 'prime_multiplication_generator/color_selections'
-require 'benchmark'
+require_relative '../benchmark_test/benchmark_test'
 
 module PrimeMultiplicationGenerator
   # Draws the multiplication table for prime numbers
@@ -22,7 +22,7 @@ module PrimeMultiplicationGenerator
   # Generates benchmark tests
   #
   def self.benchmark_performance
-    ::Benchmark.bm_primes
+    ::BenchmarkTest.bm_primes
     nil
   end
 end
