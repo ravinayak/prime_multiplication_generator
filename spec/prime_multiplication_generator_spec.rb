@@ -39,7 +39,7 @@ describe PrimeMultiplicationGenerator do
   describe '.benchmark_performance' do
 
     it 'calls bm_primes' do
-      expect(::Benchmark).to receive(:bm_primes).exactly(1).times
+      expect(::BenchmarkTest).to receive(:bm_primes).exactly(1).times
       subject.benchmark_performance
     end
   end
